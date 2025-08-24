@@ -1,0 +1,104 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #eaf6ff; /* Light blue background */
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #ffffff; /* White container */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    color: #005a9e; /* Dark blue for heading */
+    margin-bottom: 2rem;
+}
+
+.upload-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.upload-area {
+    border: 2px dashed #007bff; /* Blue dashed border */
+    padding: 2rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.upload-area:hover {
+    background-color: #e9ecef;
+}
+
+.upload-area label {
+    color: #005a9e;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: none; /* Hide the default input */
+}
+
+.preview {
+    margin-top: 1rem;
+    max-width: 100%;
+    max-height: 150px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+button {
+    background-color: #007bff; /* Blue button */
+    color: white;
+    border: none;
+    padding: 1rem 2rem; /* Bigger button */
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px);
+}
+
+/* Mobile friendly adjustments */
+@media (min-width: 600px) {
+    .upload-section {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .upload-area {
+        width: 48%;
+    }
+
+    button {
+        width: auto;
+    }
+}
+
