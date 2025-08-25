@@ -7,7 +7,6 @@ function App() {
   const [backImage, setBackImage] = useState(null);
   const [frontPreview, setFrontPreview] = useState(null);
   const [backPreview, setBackPreview] = useState(null);
-  const [pdfUrl, setPdfUrl] = useState(null);
 
   const handleFrontImageChange = (e) => {
     const file = e.target.files[0];
@@ -43,7 +42,7 @@ function App() {
           const y = (pageHeight - totalHeight) / 2;
           doc.addImage(imgData1, 'JPEG', x, y, imgWidth, imgHeight);
           doc.addImage(imgData2, 'JPEG', x, y + imgHeight + 10, imgWidth, imgHeight);
-          setPdfUrl(doc.output('datauristring'));
+          doc.save('aadhar-card.pdf');
         };
         reader2.readAsDataURL(backImage);
       };
@@ -72,15 +71,9 @@ function App() {
           {backPreview && <img id="back-preview" className="preview" src={backPreview} alt="Back Preview" />}
         </div>
       </div>
-      {pdfUrl ? (
-        <a href={pdfUrl} download="aadhar-card.pdf" className="btn">
-          Download PDF
-        </a>
-      ) : (
-        <button onClick={generatePdf} className="btn">
-          Generate PDF
-        </button>
-      )}
+      <button onClick={generatePdf} className="btn">
+        Generate and Download
+      </button>
     </div>
   );
 }
