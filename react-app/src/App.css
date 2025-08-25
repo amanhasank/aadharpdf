@@ -68,7 +68,7 @@ input[type="file"] {
     border: 1px solid #ddd;
 }
 
-button {
+.btn {
     background-color: #007bff; /* Blue button */
     color: white;
     border: none;
@@ -79,9 +79,12 @@ button {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     width: 100%;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
 }
 
-button:hover {
+.btn:hover {
     background-color: #0056b3; /* Darker blue on hover */
     transform: translateY(-2px);
 }
@@ -97,7 +100,7 @@ button:hover {
         width: 48%;
     }
 
-    button {
+    .btn {
         width: auto;
     }
 }
